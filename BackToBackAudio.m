@@ -7,14 +7,14 @@ clc;
 clear;
 
 % Load the Audio (.wav) File
-filename = 'D:\Documents\OneDrive\Documents\Course Work\Semester 6\EE330 Digital Signal Processing\LAB\LAB 1\1.4 d VIII\whale.wav';
+filename = '\whale.wav';
 [s, fs] = audioread(filename);
 
 t = 0 : 1 : length(s) - 1;      % Time indices for input
 t = t./fs;
 
 % Generate an impulse train depending upon the No. of repetitions required
-i = ImpulseTrain(length(s), 2);
+i = impulseTrain(length(s), 2);
 result = conv(i, s);            % Convolve with audio waveform
 
 % Plot of original signal
